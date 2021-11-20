@@ -3,5 +3,12 @@ class UsersController < ApplicationController
     @books = Book.all
     @user = User.find(params[:id])
     # @books = @user.books.page(params[:page]).reverse_order
+    # ユーザーに関連付けられた投稿のみを渡す。。ページングのpageメソッド
   end
-end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  
+end 
