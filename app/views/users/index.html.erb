@@ -1,0 +1,21 @@
+<p id="notice"></p>
+<h2>Users</h2>
+<table class=table>
+ <thead>
+  <tr>
+    <th>image</th>
+    <th>name</th>
+  </tr>
+ </thead>
+</table>
+<tbody>
+     <tr>
+          <% @users.each do |user| %>
+              <td><%= user.profile_image_id %></td>
+              <td><%= user.name %></td>
+              <td>
+                   <%= link_to 'show', user_path(user.id) %>
+              </td>
+          <% end %>
+     </tr>
+</tbody>
