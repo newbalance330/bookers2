@@ -8,9 +8,11 @@
   </tr>
  </thead>
 </table>
+<%= render 'users/info', user: @user %>
 <tbody>
   <tr>
    <% @users.each do |user| %>
+    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
     <td><%= user.profile_image_id %></td>
     <td><%= user.name %></td>
     <td>

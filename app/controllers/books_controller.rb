@@ -8,7 +8,7 @@ class BooksController < ApplicationController
     @book.user_id = current_user.id
     # current_userはdeviseのヘルパーメソッドでログイン中のユーザー情報を取得できる
     @book.save
-    redirect_to books_path
+    redirect_to book_path(@book.id), notice: "You have created book successfully."
   end
 
   def index
