@@ -1,17 +1,26 @@
-<p id="notice"></p>
-<%= render 'users/info', user: @user %>
-
-<div class="cotainer">
- <div class="row">
+<main>
+ <p id="notice"></p>
+ <div class="container">
+  <div class="row">
    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-     <h1>Editing Book</h1>
+    <h1>Editing Book</h1>
      <%= form_with model:@book, local: true do |f| %>
-       <h4>Title</h4>
-       <%= f.text_field :title %>
-       <h4>Opinion</h4>
-       <%= f.text_area :body %>
-       <%= f.submit 'Update Book' %>
+      <div class="form-group">
+       <label for="book_title">Title</label>
+       <%= f.text_field :title, class: "form-control book_title" %>
+      </div>
+      <div class="form-group">
+       <label for="book_opinion">Opinion</label>
+       <%= f.text_area :body, class: "form-control book_bod" %>
+      </div>
+      <div class="form-group">
+       <%= f.submit 'Update Book', class: "btn btn-success" %>
+      </div>
      <% end %>
+     <%= link_to "show", user_path(current_user.id) %>
+     |
+     <%= link_to "Back", book_path %>
+    </div>
    </div>
  </div>
-</div>
+</main>

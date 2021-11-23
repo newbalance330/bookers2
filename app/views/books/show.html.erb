@@ -1,5 +1,5 @@
 <p id="notice"></p>
-<%= render 'users/info', user: @user %>
+<%= render 'users/info', user: @user , book: @new_book %>
 <h2>Book detail</h2>
  <div>
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
