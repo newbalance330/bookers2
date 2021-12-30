@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    # usersテーブル内の指定したレコードからidカラムの値を取得して@userに代入すること
     if @user.id == current_user.id
       render "edit"
     else
