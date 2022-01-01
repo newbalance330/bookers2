@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   
   def new
     @book = Book.new
+    # 「Book.new」と記述すると、空のモデルが生成され、インスタンス変数@bookに代入されてViewで利用できるようになる
   end
 
   def create

@@ -1,6 +1,9 @@
 <h1>New book</h1>
 <%= form_with model:@book, local:true do |f| %>
-<%# form_withを使うことにより、簡単に入力フォームに必要なHTMLを作成することが出来る%>
+<%# form_withを使うことにより、簡単に入力フォームに必要なHTMLを作成することが出来る %>
+<%# インスタンス変数を取得し、ブロック変数「f」に渡しています .ブロック変数とは、特定の範囲内で有効になる（使える）変数です。
+今回は、form_withのdoからendまでが有効範囲です %>
+<%# form_withでは「local:true」の指定がない場合にはデフォルトで「非同期通信」が行われます  今回は通常のフォーム送信を行うため「local:true」を指定しています%>
 
   <h4>Title</h4>
   <%= f.text_field :title %>
