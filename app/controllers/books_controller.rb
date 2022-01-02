@@ -8,6 +8,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    # データを新規登録するインスタンス作成
     @book = Book.new(book_params)
     @books = Book.all
     @user = current_user
@@ -56,7 +57,11 @@ class BooksController < ApplicationController
   end
 
  private
+# ストロングパラメータ privateより下に書く事でアクションとして認識されず
+# controllerの中でしか呼び出せない
 
+
+# ここでフォームで入力されたデータを受け取っている
   def book_params
     params.require(:book).permit(:title, :body)
   end
