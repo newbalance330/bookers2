@@ -30,6 +30,7 @@ class BooksController < ApplicationController
 
   def show
     @new_book = Book.new
+    # URLが/books/1の場合、params[:id] と記述すると、id=1を取り出せます
     @book = Book.find(params[:id])
     @user = @book.user
 
